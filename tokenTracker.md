@@ -14,19 +14,19 @@ This documentation provides an overview of how our application tracks NFTs and S
 
 #### Fetch Token Account/Owner Information:
 
-Use the function `getParsedTokenAccountsByOwner` to get all tokens owned by a specific user.
+- Use the function `getParsedTokenAccountsByOwner` to get all tokens owned by a specific user.
 
 #### Metadata Mapping:
 
-Filter out the tokens that correspond to NFTs by accessing the metadata of each token.
+- Filter out the tokens that correspond to NFTs by accessing the metadata of each token.
 
 #### Verification Using QuickNode API:
 
-Query the QuickNode API to identify verified and unverified NFTs.
+- Query the QuickNode API to identify verified and unverified NFTs.
 
 #### Filter Unverified NFTs:
 
-Ensure that the unverified NFTs are excluded from the final display list, leaving only the verified ones.
+- Ensure that the unverified NFTs are excluded from the final display list, leaving only the verified ones.
 
 ### Example Code:
 
@@ -44,17 +44,62 @@ Allow users to add custom tokens which are fetched and validated separately.
 ### Example Code:
 
 ```typescript
-const ownerTokens = await getParsedTokenAccountsByOwner(walletAddress);
-const nftTokens = filterNftTokens(ownerTokens); // Custom filter function
-const verifiedNfts = quickNodeApi.getVerifiedNfts(nftTokens);
+import { Connection, PublicKey } from "@solana/web3.js";
+import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
+
+// Function to fetch and filter NFTs
+async function fetchAndFilterNFTs(walletAddress: string) {
+    const connection = new Connection('https://api.mainnet-beta.solana.com');
+    const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+        new PublicKey(walletAddress),
+        { programId: TOKEN_PROGRAM_ID }
+    );
+
+    const nftTokens = tokenAccounts.value.filter(account => {
+        const tokenAmount = account.account.data.parsed.info.tokenAmount;
+        return tokenAmount.decimals === 0 && tokenAmount.uiAmount === 1;
+    });
+
+    const verifiedNfts = await quickNodeApi.getVerifiedNfts(nftTokens);
+    return verifiedNfts;
+}
+
+const walletAddress = "Your_Solana_Wallet_Address";
+const verifiedNfts = await fetchAndFilterNFTs(walletAddress);
+console.log(verifiedNfts);
 ```
 
 ### Example Code:
 ```typescript
 import { TokenListProvider } from '@solana/spl-token-registry';
 
-const tokenList = await new TokenListProvider().resolve();
-const knownTokens = tokenList.filterByChainId(101); // Fetch Solana Mainnet tokens
-const unknownTokens = fetchUnknownTokens(userTokens, knownTokens); 
+// Function to fetch known and unknown tokens
+async function fetchTokens(walletAddress: string) {
+    const connection = new Connection('https://api.mainnet-beta.solana.com');
+    const tokenListProvider = new TokenListProvider();
+    const tokenList = await tokenListProvider.resolve();
+    const knownTokens = tokenList.filterByChainId(101); // Fetch Solana Mainnet tokens
+
+    const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+        new PublicKey(walletAddress),
+        { programId: TOKEN_PROGRAM_ID }
+    );
+
+    const userTokens = tokenAccounts.value.map(account => ({
+        mintAddress: account.account.data.parsed.info.mint,
+        tokenAddress: account.pubkey.toBase58(),
+        balance: account.account.data.parsed.info.tokenAmount.uiAmount,
+    }));
+
+    const knownTokenAddresses = knownTokens.map(token => token.address);
+    const unknownTokens = userTokens.filter(token => !knownTokenAddresses.includes(token.mintAddress));
+
+    return { knownTokens, unknownTokens };
+}
+
+const walletAddress = "Your_Solana_Wallet_Address";
+const { knownTokens, unknownTokens } = await fetchTokens(walletAddress);
+console.log("Known Tokens:", knownTokens);
+console.log("Unknown Tokens:", unknownTokens);
 // filter out unknown nfts from quick node nfts
 ```
