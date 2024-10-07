@@ -60,10 +60,10 @@ const walletAddress = "Your_Solana_Wallet_Address";
 const verifiedNfts = await fetchAndFilterNFTs(walletAddress);
 console.log(verifiedNfts);
 ```
-1. Import Required Modules:
+##### 1. Import Required Modules:
 - Import the necessary classes from the Solana Web3.js library and the SPL Token library.
 
-2. Define fetchAndFilterNFTs Function:
+##### 2. Define fetchAndFilterNFTs Function:
 - Create an asynchronous function fetchAndFilterNFTs that takes a wallet address as a parameter.
 - Establish a connection to the Solana mainnet.
 - Fetch the token accounts for the given wallet address using getParsedTokenAccountsByOwner.
@@ -71,7 +71,7 @@ console.log(verifiedNfts);
 - Use the QuickNode API to verify the NFTs.
 - Return the list of verified NFTs.
 
-3. Execute fetchAndFilterNFTs:
+##### 3. Execute fetchAndFilterNFTs:
 - Call the fetchAndFilterNFTs function with a specified wallet address and log the verified NFTs to the console.
 
 ## 2. Tracking SPL Tokens
