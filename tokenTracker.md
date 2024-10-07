@@ -143,11 +143,11 @@ console.log("Unknown Tokens:", unknownTokens);
 
 ## Concepts and Implementation
 
-### QuickNode [Quicknode] (https://www.quicknode.com/docs/solana)
+### QuickNode [Quicknode](https://www.quicknode.com/docs/solana)
 - QuickNode is a blockchain infrastructure provider that offers APIs for interacting with various blockchains, including Solana.
 - In this implementation, QuickNode is used to verify NFTs by querying their API to check the authenticity of the NFTs.
 
-### SPL Token Package [SPL-Registry] (https://www.npmjs.com/package/@solana/spl-token-registry)
+### SPL Token Package [SPL-Registry](https://www.npmjs.com/package/@solana/spl-token-registry)
 - The SPL Token package provides utilities for interacting with SPL tokens on the Solana blockchain.
 - It includes functions for fetching token accounts, parsing token data, and managing token metadata.
 
