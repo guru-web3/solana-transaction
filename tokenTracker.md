@@ -14,7 +14,7 @@ This documentation provides an overview of how our application tracks NFTs and S
 
 1. #### Fetch Token Account/Owner Information:
 
-- Use the function `getParsedTokenAccountsByOwner`[RPC method](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getParsedTokenAccountsByOwner). to get all tokens owned by a specific user.
+- Use the function `getParsedTokenAccountsByOwner` [RPC method](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#getParsedTokenAccountsByOwner). to get all tokens owned by a specific user.
 - This function queries the Solana blockchain to retrieve token accounts associated with a given wallet address.
 ref: 
 
@@ -80,7 +80,7 @@ console.log(verifiedNfts);
 - The SPL token registry provides a list of known tokens on the Solana blockchain [Token List](https://raw.githubusercontent.com/solana-labs/token-list/refs/heads/main/src/tokens/solana.tokenlist.json).
 
 2. #### Token List via Registry:
-- Use the TokenListProvider from the SPL token registry to fetch the list of known tokens[TokenListProvider](https://github.com/solana-labs/token-list/blob/main/src/lib/tokenlist.ts)
+- Use the TokenListProvider from the SPL token registry to fetch the list of known tokens [TokenListProvider](https://github.com/solana-labs/token-list/blob/main/src/lib/tokenlist.ts)
 - This step ensures that we have an up-to-date list of tokens that are recognized on the Solana blockchain.
 
 3. #### Handle Unknown Tokens
@@ -125,10 +125,10 @@ console.log("Known Tokens:", knownTokens);
 console.log("Unknown Tokens:", unknownTokens);
 // filter out unknown nfts from quick node nfts
 ```
-1. Import Required Modules:
+#### 1. Import Required Modules:
 - Import the necessary classes from the Solana Web3.js library and the SPL Token Registry library.
 
-2. Define fetchTokens Function:
+#### 2. Define fetchTokens Function:
 - Create an asynchronous function fetchTokens that takes a wallet address as a parameter.
 - Establish a connection to the Solana mainnet.
 - Use the TokenListProvider to fetch the list of known tokens from the SPL token registry.
@@ -137,7 +137,7 @@ console.log("Unknown Tokens:", unknownTokens);
 - Identify unknown tokens by comparing the user's tokens with the known tokens from the registry.
 - Return the list of known and unknown tokens.
 
-3. Execute fetchTokens:
+#### 3. Execute fetchTokens:
 - Call the fetchTokens function with a specified wallet address and log the known and unknown tokens to the console.
 
 
