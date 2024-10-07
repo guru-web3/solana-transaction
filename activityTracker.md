@@ -1,6 +1,6 @@
 # README for Displaying Activity List
 
-This README provides a detailed explanation of how to fetch, parse, and display activities related to NFTs and SPL tokens on the Solana blockchain. It includes example code snippets and references to additional resources for further reading.
+This README provides a detailed explanation of how to fetch, parse, and display activities related to NFTs and SPL tokens on the Solana blockchain along with submitted Backend transaction submitted to blockchain. It includes example code snippets and references to additional resources for further reading.
 
 ## Displaying Activity List
 
@@ -116,11 +116,7 @@ Parse the relevant instructions to extract details such as source, destination, 
 import { Connection, PublicKey, ParsedTransactionWithMeta, ConfirmedSignatureInfo } from "@solana/web3.js";
 
 async function displayActivities(walletAddress: string) {
-    const connection = new Connection('https://api.mainnet-beta.solana.com');
-    const signatures = await connection.getSignaturesForAddress(new PublicKey(walletAddress));
-    const transactions = await Promise.all(signatures.map(async (s) => {
-        return await connection.getParsedTransaction(s.signature);
-    }));
+    const transactions = fetchAndParseActivities(walletAddress)
 
     const formattedActivities = formatTransactionToActivity({
         transactions,

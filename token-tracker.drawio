@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="yL7SRkgJHNaPIVj5XREa">
+    <mxGraphModel dx="1242" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="150" width="760" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-2" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;SPL Tokens&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="170" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-3" target="iaXEx4cRs6buXGc0ckQM-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-3" value="Fetch SPL tokens owned by user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-4" target="iaXEx4cRs6buXGc0ckQM-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-4" target="iaXEx4cRs6buXGc0ckQM-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-4" value="Fetch tokens from spl registry" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-5" target="iaXEx4cRs6buXGc0ckQM-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-5" value="Known tokens:&lt;div&gt;Tokens of users which is present in spl token list&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-6" target="iaXEx4cRs6buXGc0ckQM-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-6" value="Unknown tokens:&lt;div&gt;Tokens of users which is unknow and not present in spl token list&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-7" value="Merge to form SPL token list of user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="707" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="585" width="760" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-16" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;NFT Tracker&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="605" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-17" target="iaXEx4cRs6buXGc0ckQM-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-17" value="Fetch NFTs owned by user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="745" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-18" target="iaXEx4cRs6buXGc0ckQM-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-18" value="quicknode api with wallet address" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="745" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-19" target="iaXEx4cRs6buXGc0ckQM-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-19" value="Known NFTs:&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;NFTs&lt;/span&gt;&amp;nbsp;of users which is verified and present in quicknode&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="685" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-20" target="iaXEx4cRs6buXGc0ckQM-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-20" value="Unknown NFTs:&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;NFTs&lt;/span&gt;&amp;nbsp;of users which is un verified or not present in quicknode&amp;nbsp;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="805" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-21" value="Merge to form NFTs list of user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="707" y="745" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iaXEx4cRs6buXGc0ckQM-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.025;entryY=0.375;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iaXEx4cRs6buXGc0ckQM-18" target="iaXEx4cRs6buXGc0ckQM-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
